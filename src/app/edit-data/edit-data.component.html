@@ -1,0 +1,109 @@
+
+
+<div class="form-group">
+ 
+
+<form [formGroup]='signupform' (ngSubmit)="onSubmit(signupform.value)">
+  
+  <h2>Update Data Form</h2>
+ 
+ 
+  <div class="form-group1">
+    <label for="fname">First Name</label>
+    <input id="fname" type="text" name="fname" formControlName="fname">
+  
+
+
+   
+    <label for="mname">Middle Name</label>
+    <input id="mname" type="text" name="mname" formControlName="mname">
+    </div>
+  
+ 
+ 
+<div class="form-group1">
+    <label for="lname">Last Name</label>
+    <input id="lname" type="text" name="lname" formControlName="lname">
+
+
+
+    <label for="email">Email</label>
+    <input id="email" type="text" name="email" formControlName="email">
+
+</div>
+
+<div class="form-group1">
+
+    <label for="phonenumber">Phone Number</label>
+    <input id="phonenumber" type="text" name="phonenumber" formControlName="phonenumber">
+    
+
+  
+    <label for="role">Role</label>
+    <select class="form-control" id="role" formControlName="role" required>
+      <option *ngFor="let role of roles" [value]="role" name="role" >{{role}}</option>
+    </select>
+    </div>
+
+
+    <div class="form-group1">
+
+    <label for="address">Address</label>
+    <input id="address" type="text" name="address" formControlName="address">
+    
+
+   
+
+      <label for="cname">Customer Name</label>
+      <input id="cname" type="text" name="cname" formControlName="cname">
+      
+  
+      </div>
+
+      <div class="form-group1">
+
+        <label for="website">Website:</label>
+        <input id="website" type="text" name="website" formControlName="website">
+       
+    
+       
+          <label for="caddress">Customer Address</label>
+          <input id="caddress" type="text" name="caddress" formControlName="caddress">
+
+      
+          </div>
+
+          <div class="form-group1">
+
+            <label for="rname">Role Name</label>
+            <input id="rname" type="text" name="rname" formControlName="rname">
+
+
+
+            
+            <label for="key">Key</label>
+            <select class="form-control" id="key" formControlName="key" required>
+              <option *ngFor="let key of keys" [value]="key" name="key" >{{key}}</option>
+            </select>
+
+        
+           </div>
+
+            
+          <div class="clear">
+              <label for="description">Description</label>
+              <input id="description" type="text" name="description" formControlName="description">
+              <span class="warning-block" *ngIf="!signupform.valid && signupform.touched">Please fill input with valid data</span>
+             </div>
+
+ <div class="btns">
+    
+    <input type="Submit" value="Save" [disabled]="!signupform.valid">
+    <input type="button" id="cancel" value="Cancel" (click)="cancel()">
+  </div> 
+    
+
+</form>
+
+   
+ </div>
